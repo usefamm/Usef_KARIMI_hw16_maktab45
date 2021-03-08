@@ -1,0 +1,49 @@
+///////////////////////////////////////////////////////////////////////////////////////IMPORT//////////////////////////////////////////////////////////////////////////////////////////////////////
+import:mysql -u username -p database_name < file.sql
+First, log in to MySQL as root or another user with sufficient privileges to create new databases:
+
+mysql -u root -p
+ 
+This command will bring you into the MySQL shell prompt. Next, create a new database with the following command. In this example, the new database is called new_database:
+
+CREATE DATABASE new_database;
+ 
+You’ll see this output confirming the database creation.
+
+Output
+Query OK, 1 row affected (0.00 sec)
+Then exit the MySQL shell by pressing CTRL+D. From the normal command line, you can import the dump file with the following command:
+
+mysql -u username -p new_database < data-dump.sql
+ 
+username is the username you can log in to the database with
+newdatabase is the name of the freshly created database
+data-dump.sql is the data dump file to be imported, located in the current directory
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+///////////////////////EXPORT///////////////////////////////////
+////////////////////////////////////////////////////////////////
+export:mysqldump -u username -p databasename > filename.sql
+Use mysqldump to export your database:
+
+mysqldump -u username -p database_name > data-dump.sql
+ 
+username is the username you can log in to the database with
+database_name is the name of the database to export
+data-dump.sql is the file in the current directory that stores the output.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////SELFRELATIONSHIP////////////////////////////
+This particular type of relationship does not exist between a pair of tables, which is why it isn't mentioned at the beginning of this section. It is instead a relationship that exists between the records within a table. Ironically, you'll still regard this throughout the design process as a table relationship.
+
+A table bears a self-referencing relationship (also known as a recursive relationship) to itself when a given record in the table is related to other records within the table. Similar to its dual-table counterpart, a self-referencing relationship can be one-to-one, one-to-many, or many-to-many.
+
+
